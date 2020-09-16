@@ -5,14 +5,14 @@ terraform {
 
 // instantiate AWS provider with a region
 provider "aws" {
-  region  = "eu-west-1"
+  region = "eu-west-1"
 }
 
 // create 100 users
 module "users" {
   source = "./modules/cloudesk-user/"
   for_each = toset([
-    for i in range(100) : format("user-%02d", i)
+    for i in range(100) : format("milestone-4-%02d", i)
   ])
 
   name = each.key
