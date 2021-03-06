@@ -14,11 +14,11 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-// create 100 users
+// create 10 users
 module "users" {
-  source = "./modules/cloudesk-user/"
+  source = "../modules/cloudesk-user/"
   for_each = toset([
-    for i in range(100) : format("user-%02d", i)
+    for i in range(10) : format("user-%02d", i)
   ])
 
   name = each.key

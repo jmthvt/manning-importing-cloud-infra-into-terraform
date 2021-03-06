@@ -3,5 +3,6 @@ resource "aws_iam_user" "user" {
 
   tags = {
     managed-by = "manning-terraform"
+    env        = "sandbox"
   }
 }
